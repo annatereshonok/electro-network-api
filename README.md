@@ -72,7 +72,7 @@ docker compose up --build
 
 4) Логин:
 - JWT: получите токен по `POST /api/auth/token/` (staff-пользователь).
-- Админка: email/username и пароль суперюзера из `.env`.
+- Админка: email и пароль суперюзера из `.env`.
 
 Остановить:
 ```bash

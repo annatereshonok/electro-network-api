@@ -111,24 +111,22 @@ SIMPLE_JWT = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "ELECTRONET API",
-    "DESCRIPTION": "Онлайн-платформа торговой сети электроники",
+    "TITLE": "Electro Network API",
     "VERSION": "1.0.0",
-    "SERVE_INCLUDE_SCHEMA": False,
-    "SCHEMA_PATH_PREFIX": r"/api",
+    "SERVE_PERMISSIONS": ["rest_framework.permissions.AllowAny"],
+    "SERVE_AUTHENTICATION": [],
     "COMPONENT_SPLIT_REQUEST": True,
-    "SWAGGER_UI_DIST": "SIDECAR",
-    "REDOC_DIST": "SIDECAR",
-    "SECURITY": [
-        {"JWTAuth": []},
-    ],
-    "SECURITY_SCHEMES": {
-        "JWTAuth": {
-            "type": "http",
-            "scheme": "bearer",
-            "bearerFormat": "JWT",
+    "SCHEMA_PATH_PREFIX": r"/api",
+    "COMPONENTS": {
+        "securitySchemes": {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT",
+            }
         }
     },
+    "SECURITY": [{"BearerAuth": []}],
 }
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
